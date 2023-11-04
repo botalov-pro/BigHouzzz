@@ -1,20 +1,30 @@
-# About
+# BigHouzz
 
-BigHouzz - ... # FIXME
+BigHouzz - ...
 
-## Requrements
+## Requirements
 
   * Python 3.12
   * Django 4.2.6
   * django-bootstrap v5
+
+## Documentation
+
+The full documentation is at ...
+
+## Installation
 
 ## Access
 
   * Superuser: admin2
   * Password: admin2
 
+## Bugs and suggestions
+
+If you have found a bug or if you have a request for additional functionality, please use the issue tracker on GitHub.
+
+https://github.com/...
+
 ## Author
 
-- Понятный материал;
-- Нескучные объяснения;
-- Удобный поиск.
+Developed and maintained by [Konstantin Botalov](https://botalov.pro)
