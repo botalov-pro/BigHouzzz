@@ -1,47 +1,61 @@
-{# Load the tag library #}
-{% load bootstrap5 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Главная страница!</title>
+    <title>{% block title %}Главная страница!{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/a97047fead.js" crossorigin="anonymous"></script>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
+
 <body>
 <div class="container-fluid">
-    <h1>Главная страница!</h1>
-    <h2>Добро пожаловать на главную страницу проекта BigHouzzz!</h2>
-    <p>
-        Здесь вы найдете все необходимое для создания уютного и комфортного дома вашей мечты. С нами вы сможете сэкономить время, силы и деньги, получая доступ к широкому ассортименту товаров и услуг от ведущих производителей и профессионалов в области строительства, ремонта и дизайна интерьеров.
-    </p>
-    <p>Мы предлагаем:
-        <ul>
-            <li>Товары для строительства и ремонта: от строительных материалов до бытовой техники и мебели.</li>
-            <li>Услуги по дизайну интерьеров: разработка проектов, консультации по выбору материалов и предметов интерьера.</li>
-            <li>Профессиональные советы и рекомендации от экспертов в области строительства и ремонта.</li>
-            <li>Обзоры и рейтинги товаров и услуг, представленных на сайте.</li>
-            <li>Возможность общения с другими пользователями и профессионалами для обмена опытом и получения советов.</li>
-            <li>Новости и актуальные акции от партнеров проекта.</li>
-            <li>Удобный интерфейс и система поиска для быстрого нахождения интересующих товаров и услуг.</li>
-            <li>Безопасные сделки и гарантия качества предлагаемых товаров и услуг.</li>
-        </ul>
-        Присоединяйтесь к проекту BigHouzzz и сделайте свой дом еще уютнее и красивее вместе с нами!
-    </p>
-    <h3>Навигация</h3>
-    <ul>
-        <li><a href="/">Главная</a></li>
-        <li><a href="/cars">Машинки</a></li>
-        <li><a href="/about">О проекте</a></li>
-        <li><a href="/contacts">Контакты</a></li>
-    </ul>
-    <img src="https://gzhi.mosreg.ru/upload/files/o/J/oJfMAwlgpwjl6w8ZZJKEyvfsgSsgKSMVY1mlRzlnm1Y6mdNGDT0rkwD02a6mw2LlIVoscGEw0lYLMh4Lr62SzwO9WGowVLoP.jpg">
+    <div class="row">
+        <div class="col-md-3" style="background-color:#7700FF">
+            <h4>Боковое меню</h4>
+            <div class="row">
+                <div class="col-md-3" style="background-color:white;">
+                    <h1><i class="fa-solid fa-home"></i></h1>
+                </div>
+                <div class="col-md-9">
+                    <h1>Навигация:</h1>
+                    <ul>
+                        <li><i class="fa-solid fa-home"></i><a href="/">Главная</a></li>
+                        <li><i class="fa-solid fa-car"></i><a href="/cars">Машинки</a></li>
+                        <li><i class="fa-solid fa-info"></i><a href="/about">О проекте</a></li>
+                        <li><i class="fa-solid fa-paper-plane"></i><a href="/contacts">Контакты</a></li>
+                        <li><i class="fa-solid fa-paper-plane"></i><a href="/contacts">Мой профиль</a></li>
+                        <li><i class="fa-solid fa-paper-plane"></i><a href="/contacts">Регистрация</a></li>
+                        <li><i class="fa-solid fa-paper-plane"></i><a href="/contacts">Вход в аккаунт</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <h1>Главная страница!</h1>
+            <h2>Добро пожаловать на главную страницу проекта BigHouzzz!</h2>
+            <p>
+                Здесь вы найдете все необходимое для создания уютного и комфортного дома вашей мечты. С нами вы сможете сэкономить время, силы и деньги, получая доступ к широкому ассортименту товаров и услуг от ведущих производителей и профессионалов в области строительства, ремонта и дизайна интерьеров.
+            </p>
+            <p>Мы предлагаем:
+            <ul>
+                <li>Товары для строительства и ремонта: от строительных материалов до бытовой техники и мебели.</li>
+                <li>Услуги по дизайну интерьеров: разработка проектов, консультации по выбору материалов и предметов интерьера.</li>
+                <li>Профессиональные советы и рекомендации от экспертов в области строительства и ремонта.</li>
+                <li>Обзоры и рейтинги товаров и услуг, представленных на сайте.</li>
+                <li>Возможность общения с другими пользователями и профессионалами для обмена опытом и получения советов.</li>
+                <li>Новости и актуальные акции от партнеров проекта.</li>
+                <li>Удобный интерфейс и система поиска для быстрого нахождения интересующих товаров и услуг.</li>
+                <li>Безопасные сделки и гарантия качества предлагаемых товаров и услуг.</li>
+            </ul>
+                Присоединяйтесь к проекту BigHouzzz и сделайте свой дом еще уютнее и красивее вместе с нами!
+            </p>
+            <h3>Навигация</h3>
+
+            <img src="https://gzhi.mosreg.ru/upload/files/o/J/oJfMAwlgpwjl6w8ZZJKEyvfsgSsgKSMVY1mlRzlnm1Y6mdNGDT0rkwD02a6mw2LlIVoscGEw0lYLMh4Lr62SzwO9WGowVLoP.jpg" width="100">
+        </div>
+
+    </div>
 </div>
 </body>
 </html>
