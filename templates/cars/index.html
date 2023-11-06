@@ -1,23 +1,8 @@
-{# Load the tag library #}
-{% load bootstrap5 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Машинки</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Транспорт{% endblock %}
+{% block content %}
 <div class="container-fluid">
-<h1>Машинки</h1>
-    <p>Текст про машинки</p>
+    <h1>Транспорт</h1>
+    <p>Текст про транспорт</p>
 </div>
-</body>
-</html>
+{% endblock %}
