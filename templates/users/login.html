@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Войти{% endblock %}
 {% block content %}
-<h1>Страница для входа</h1>
+<form>
+    <h1 class="h3 mb-3 fw-normal">Вход</h1>
+    <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="ivanov@mail.ru">
+        <label for="floatingInput">Электронная почта</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+        <label for="floatingPassword">Пароль</label>
+    </div>
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me"> Запомнить меня
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit">Войти</button>
+</form>
 {% endblock %}
