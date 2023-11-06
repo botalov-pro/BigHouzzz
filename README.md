@@ -4,7 +4,7 @@ BigHouzz - system for managing relationships with neighbors in multi-apartment r
 
 ## System Requirements and Stack Technologies
 
-  * Python 3.12+
+  * Python 3.12
   * Django 4.2.6
   * django-bootstrap v5
   * django-environ 0.11.2
