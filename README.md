@@ -1,12 +1,13 @@
 # BigHouzz
 
-BigHouzz - ...
+BigHouzz - система управления взаимоотношениями с соседями в многоквартирных жилых домах.
 
 ## Requirements
 
   * Python 3.12
   * Django 4.2.6
   * django-bootstrap v5
+  * django-environ 0.11.2
 
 ## Documentation
 
