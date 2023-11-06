@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Konstantin Botalov">
     <title>{% block title %}Главная страница!{% endblock %}</title>
-    <script src="https://kit.fontawesome.com/a97047fead.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> {# Иконки Bootstrap #}
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -14,48 +15,34 @@
 
 {# Header #}
 <header>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-                        <nav class="sidebar-sticky bg-dark navbar-dark navbar-expand-md">
-                <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <i class="fa-solid fa-home"></i>
-                        <span class="fs-4">Навигация</span>
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <i class="bi bi-buildings" style="font-size: 32; width: 2rem; height: 2rem"></i>
+                        BigHouzzz
                     </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="/cars" class="nav-link text-white" aria-current="page">
-                            <i class="fa-solid fa-car"></i>
-                            Машинки
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/about" class="nav-link text-white">
-                            <i class="fa-solid fa-info"></i>
-                            О проекте
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            Контакты
-                        </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>Константин</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">Настройки</a></li>
-                        <li><a class="dropdown-item" href="#">Профиль</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Выход</a></li>
-                    </ul>
-                </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cars">Транспорт</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">О проекте</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contacts">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-outline-light me-2">Войти</button>
+                            <button type="button" class="btn btn-success">Зарегистрироваться</button>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -63,25 +50,30 @@
 </header>
 
 {# Main #}
-<section>
-    <div class="container">
+<section class="container" style="padding-top: 56px">
         <div class="row">
-            <main>
-                <h1>Главная страница!</h1>
-            <h2>Добро пожаловать на главную страницу проекта BigHouzzz!</h2>
+            <div class="d-flex align-items-center p-3 my-3 text-white rounded shadow-sm" style="background-color: #6f42c1;">
+                <i class="bi bi-info-square" style="font-size: 2rem; width: 3rem; height: 3rem"></i>
+            <div class="lh-1">
+                <h1 class="h6 mb-0 text-white lh-1">Заголовок очень важного сообщения</h1>
+                <small>Текст очень важного сообщения</small>
+            </div>
+            </div>
+
+            <main class="my-3 p-3 bg-body rounded shadow-sm">
+                <h1 class="visually-hidden">Главная страница!</h1>
+                <h2>Добро пожаловать в BigHouzzz!</h2>
             <p>
-                Здесь вы найдете все необходимое для создания уютного и комфортного дома вашей мечты. С нами вы сможете сэкономить время, силы и деньги, получая доступ к широкому ассортименту товаров и услуг от ведущих производителей и профессионалов в области строительства, ремонта и дизайна интерьеров.
+                BigHouzzz - система управления взаимоотношениями с соседями в многоквартирных жилых домах.
             </p>
-            <p>Мы предлагаем:
+            <p>Вы можете:
             <ul>
-                <li>Товары для строительства и ремонта: от строительных материалов до бытовой техники и мебели.</li>
-                <li>Услуги по дизайну интерьеров: разработка проектов, консультации по выбору материалов и предметов интерьера.</li>
-                <li>Профессиональные советы и рекомендации от экспертов в области строительства и ремонта.</li>
-                <li>Обзоры и рейтинги товаров и услуг, представленных на сайте.</li>
-                <li>Возможность общения с другими пользователями и профессионалами для обмена опытом и получения советов.</li>
-                <li>Новости и актуальные акции от партнеров проекта.</li>
-                <li>Удобный интерфейс и система поиска для быстрого нахождения интересующих товаров и услуг.</li>
-                <li>Безопасные сделки и гарантия качества предлагаемых товаров и услуг.</li>
+                <li>Узнать кто живет рядом</li>
+                <li>Связаться с владельцами транспортных средств</li>
+                <li>Посмотреть карту района</li>
+                <li>Принять участие в опросах и голосованиях</li>
+                <li>Публиковать частные объявления</li>
+                <li>Узнавать новости района и смотреть афишу мероприятий</li>
             </ul>
             <p>
                 Присоединяйтесь к проекту BigHouzzz и сделайте свой дом еще уютнее и красивее вместе с нами!
@@ -90,15 +82,14 @@
             <img src="https://gzhi.mosreg.ru/upload/files/o/J/oJfMAwlgpwjl6w8ZZJKEyvfsgSsgKSMVY1mlRzlnm1Y6mdNGDT0rkwD02a6mw2LlIVoscGEw0lYLMh4Lr62SzwO9WGowVLoP.jpg" width="100%">
             </main>
         </div>
-    </div>
 </section>
 
 {# Footer #}
 <footer>
-    <div class="container">
+    <div class="container align-items-center bg-dark rounded text-white-50 p-3 my-3 ">
         <div class="row">
-            <div class="text-center">
-                (c) BigHouzzz, 2023.
+            <div class="text-center mt-auto">
+                &copy; BigHouzzz, 2023.
             </div>
         </div>
     </div>
