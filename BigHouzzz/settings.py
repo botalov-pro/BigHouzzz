@@ -30,9 +30,12 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p#wfu0w(0_x0v#cu!n%r_x(%49(b12844ma0(8&4hkbymg%i(a'
+# Raises Django's ImproperlyConfigured
+# exception if SECRET_KEY not in os.environ
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# False if not in os.environ because of casting above
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
