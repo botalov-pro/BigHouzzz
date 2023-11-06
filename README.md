@@ -15,6 +15,8 @@ The full documentation is at ...
 
 ## Installation
 
+  * Create a .env file in the root folder of the project
+
 ## Access
 
   * Superuser: admin2
