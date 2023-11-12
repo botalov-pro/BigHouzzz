@@ -10,8 +10,15 @@ def index(request):
     }
     return render(request, 'core/index.html', context)
 
-def about(request):
-    return render(request, 'core/about.html')
+
+class AboutProjectView(TemplateView):
+    template_name = 'core/about.html'
+
+
+class ContactsView(TemplateView):
+    template_name = 'core/contacts.html'
+
+
 def page_not_found(request, exception):
     return render(
         request,
@@ -24,8 +31,6 @@ def page_not_found(request, exception):
 def server_error(request, *args, **argv):
     return render(request, 'core/500.html')
 
-def contacts(request):
-    return render(request, 'core/contacts.html')
 
 def csrf_failure(request, reason=''):
     return render(request, 'core/403csrf.html')
