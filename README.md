@@ -8,6 +8,7 @@ BigHouzz - system for managing relationships with neighbors in multi-apartment r
   * Django 4.2.6
   * django-bootstrap v5
   * django-environ 0.11.2
+  * pillow 10.1.0
 
 ## Documentation
 
