@@ -4,7 +4,7 @@
         <div class="row">
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-4">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="{% url 'core:index' %}">
                         <i class="bi bi-buildings" style="font-size: 32; width: 2rem; height: 2rem"></i>
                         BigHouzzz
                     </a>
@@ -14,18 +14,24 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="/cars">Транспорт</a>
+                                <a class="nav-link
+                                    {% if request.resolver_match.view_name  == 'cars:cars_index' %}active{% endif %}"
+                                   href="{% url 'cars:cars_index' %}">Транспорт</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/about">О проекте</a>
+                                <a class="nav-link
+                                    {% if request.resolver_match.view_name  == 'core:about' %}active{% endif %}"
+                                   href="{% url 'core:about' %}">О проекте</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/contacts">Контакты</a>
+                                <a class="nav-link
+                                    {% if request.resolver_match.view_name  == 'core:contacts' %}active{% endif %}"
+                                   href="{% url 'core:contacts' %}">Контакты</a>
                             </li>
                         </ul>
                         <div class="text-end">
-                            <a class="btn btn-outline-light me-2" href="/auth/login" role="button">Войти</a>
-                            <a class="btn btn-success" href="/auth/signup" role="button">Зарегистрироваться</a>
+                            <a class="btn btn-outline-light me-2" href="{% url 'users:login' %}" role="button">Войти</a>
+                            <a class="btn btn-success" href="{% url 'users:signup' %}" role="button">Зарегистрироваться</a>
                         </div>
                     </div>
                 </div>
