@@ -1,5 +1,37 @@
 {% extends "base.html" %}
+{% load static %} {# FIXME: Проблема с отображением статики, если убрать это #}
 {% block title %}Профиль{% endblock %}
 {% block content %}
-<h1>Профиль</h1>
+<h1 class="h3 mb-3 fw-normal">Профиль</h1>
+<img width="100" height="100" src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" class="img-thumbnail"> {# FIXME: Проблема с отображением статики #}
+<form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-floating">
+        <div class="input-group mb-3">
+            {{ form.image }}
+        </div>
+    </div>
+    <div class="form-floating">
+        {{ form.first_name }}
+        <label for="{{ form.first_name.id_for_label }}">Имя</label>
+    </div>
+    <div class="form-floating">
+        {{ form.last_name }}
+        <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+    </div>
+    <div class="form-floating">
+        {{ form.email }}
+        <label for="{{ form.email.id_for_label }}">Адрес эл. почты</label>
+    </div>
+    <div class="form-floating">
+        {{ form.username }}
+        <label for="{{ form.username.id_for_label }}">Имя пользователя (логин)</label>
+    </div>
+    <div class="form-floating">
+        {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit">Записать</button>
+</form>
 {% endblock %}

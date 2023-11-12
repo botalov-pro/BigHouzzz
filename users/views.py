@@ -32,3 +32,22 @@ def signup(request):
         'form': registration_form
     }
     return render(request, 'users/signup.html', context)
+
+
+def profile(request):
+    if request.method == 'POST':  # Если POST-запрос на получение данных с формы
+        profile_form = UserProfileForm(data=request.POST, files=request.FILES, instance=request.user)
+        if profile_form.is_valid():
+            profile_form.save()  # Сохраняем форму
+            return HttpResponseRedirect('/profile') # Переадресация на страницу авторизации  # FIXME: Сделать перенаправление с помощью reverse
+    else:
+        profile_form = UserProfileForm(instance=request.user)
+    context = {
+        'form': profile_form
+    }
+    return render(request, 'users/profile.html', context)
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/')  # перенаправить на Главную  # FIXME: Переделать с использованием reverse('index') вместо '/'
