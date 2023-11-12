@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from http import HTTPStatus
+
 
 def index(request):
     context = {
@@ -10,6 +12,20 @@ def index(request):
 
 def about(request):
     return render(request, 'core/about.html')
+def page_not_found(request, exception):
+    return render(
+        request,
+        'core/404.html',
+        {'path': request.path},
+        status=HTTPStatus.NOT_FOUND
+    )
+
+
+def server_error(request, *args, **argv):
+    return render(request, 'core/500.html')
 
 def contacts(request):
     return render(request, 'core/contacts.html')
+
+def csrf_failure(request, reason=''):
+    return render(request, 'core/403csrf.html')
