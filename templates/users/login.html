@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Войти{% endblock %}
 {% block content %}
-<form>
+<form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Вход</h1>
     <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="ivanov@mail.ru">
-        <label for="floatingInput">Электронная почта</label>
+        {{ form.username }}
+        <label for="{{ form.username.id_for_label }}">Пользователь</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
-        <label for="floatingPassword">Пароль</label>
+        {{ form.password }}
+        <label for="{{ form.password.id_for_label }}">Пароль</label>
     </div>
     <div class="checkbox mb-3">
         <label>
