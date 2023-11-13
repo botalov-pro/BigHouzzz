@@ -2,7 +2,29 @@
 {% block title %}Транспорт{% endblock %}
 {% block content %}
 <div class="container-fluid">
-    <h1>Транспорт</h1>
-    <p>Текст про транспорт</p>
+  <h1>Транспорт</h1>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Рег. знак</th>
+      <th scope="col">Модель</th>
+      <th scope="col">Цвет</th>
+      <th scope="col">Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for vehicle in vehicles %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ vehicle.Regnum }}</td>
+      <td>{{ vehicle.Model }}</td>
+      <td>{{ vehicle.Color }}</td>
+      <td><a class="btn btn-success" href="{% url 'cars:car_detail' vehicle.id %}" role="button">Детали</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 </div>
 {% endblock %}
