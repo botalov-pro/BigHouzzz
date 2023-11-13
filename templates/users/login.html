@@ -17,6 +17,17 @@
             <input type="checkbox" value="remember-me"> Запомнить меня
         </label>
     </div>
+    <div class="form-floating">
+        {% if messages or form.errors %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% else %}
+                {{ form.non_field_errors }}
+            {% endif %}
+        {% endif %}
+    </div>
     <button class="btn btn-lg btn-primary" type="submit">Войти</button>
 </form>
 {% endblock %}

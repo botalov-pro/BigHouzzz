@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse
-from django.contrib import auth
-from users.forms import UserLoginForm, UserRegistrationForm
+from django.contrib import auth, messages
+from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 
 def login(request):
     if request.method == 'POST':  # Если POST-запрос на получение данных с формы
@@ -25,7 +25,8 @@ def signup(request):
         registration_form = UserRegistrationForm(data=request.POST)
         if registration_form.is_valid():
             registration_form.save()  # Сохраняем форму
-            return HttpResponseRedirect('/')  # Переадресация на страницу авторизации  # FIXME: Сделать перенаправление на страницу авторизации
+            messages.success(request, 'Вы успешно зарегистрировались!')
+            return HttpResponseRedirect('/auth/login')  # Переадресация на страницу авторизации  # FIXME: Сделать перенаправление с помощью reverse
     else:
         registration_form = UserRegistrationForm()
     context = {
