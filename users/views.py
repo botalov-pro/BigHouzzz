@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.urls import reverse
 from django.contrib import auth, messages
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
@@ -12,7 +12,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user and user.is_active:  # Если пользователь прошел атентификацию и активный, то
                 auth.login(request, user)  # авторизовать
-                return HttpResponseRedirect('/') # и перенаправить на Главную  # FIXME: Переделать с использованием reverse('index') вместо '/'
+                return redirect('core:index')  # перенаправить на Главную
     else:  # Если не POST-запрос, то
         login_form = UserLoginForm()
     context = {
@@ -26,7 +26,7 @@ def signup(request):
         if registration_form.is_valid():
             registration_form.save()  # Сохраняем форму
             messages.success(request, 'Вы успешно зарегистрировались!')
-            return HttpResponseRedirect('/auth/login')  # Переадресация на страницу авторизации  # FIXME: Сделать перенаправление с помощью reverse
+            return redirect('users:login')  # Переадресация на страницу авторизации
     else:
         registration_form = UserRegistrationForm()
     context = {
@@ -40,7 +40,7 @@ def profile(request):
         profile_form = UserProfileForm(data=request.POST, files=request.FILES, instance=request.user)
         if profile_form.is_valid():
             profile_form.save()  # Сохраняем форму
-            return HttpResponseRedirect('/profile') # Переадресация на страницу авторизации  # FIXME: Сделать перенаправление с помощью reverse
+            return redirect('profile')  # Переадресация на страницу профиля
     else:
         profile_form = UserProfileForm(instance=request.user)
     context = {
@@ -51,4 +51,4 @@ def profile(request):
 
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect('/')  # перенаправить на Главную  # FIXME: Переделать с использованием reverse('index') вместо '/'
+    return redirect('core:index')  # перенаправить на Главную
