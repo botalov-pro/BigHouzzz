@@ -1,50 +1,81 @@
 # BigHouzz
 
-BigHouzz - system for managing relationships with neighbors in multi-apartment residential buildings
+🏘️ **BigHouzz** is a web app for managing relationships with neighbors in multi-apartment residential buildings
 
-## System Requirements and Stack Technologies
+The code uses [Django](https://www.djangoproject.com/) as the website engine, and [Bootstrap](https://getbootstrap.com/) for the user interface.
 
-  * Python 3.12
+## System Requirements
+
+  * Python 3.12 https://www.python.org/downloads/
   * Django 4.2.6
   * django-bootstrap v5
   * django-environ 0.11.2
   * pillow 10.1.0
 
-## Documentation
+## 🚀 Features
 
-The full documentation is at https://github.com/botalov-pro/BigHouzzz/wiki
+  * User Registration
+  * Vehicles Registration
+  * About project and Contact pages
+  * Admin module
 
-## Installation
+***TODO and Features will come in the future***
 
-  1. Install and activate the virtual environment
-  2. Create a .env file in the project root folder with the following contents:
+You can see in [TODO](TODO.md).
+
+## ⚡ Main Technologies
+<code>Python</code> <code>Django</code> <code>Django-environ</code> <code>HTML</code> <code>CSS</code> <code>Bootstrap</code> <code>pillow</code> 
+
+
+## ⚙️ Installation
+
+  1. Clone the repository to your local machine:
+```bash
+git clone https://github.com/botalov-pro/BigHouzzz.git
+```
+  2. Create and activate the virtual environment:
+```bash
+$ python -m venv venv
+
+# Activate the virtual environment in Windows (In git bash)
+$ source venv/Scripts/activate
+# Activate the virtual environment in Linux/Mac
+$ source venv/bin/activate
+```
+  3. Create a .env file in the project root folder with the following contents:
 ```python
 DEBUG=True
 SECRET_KEY='<YOUR_SECRET_KEY>'
 ```
-  3. Install dependencies from requirements.txt file
-```python
-pip install -r requirements.txt
+  4. Install the required python packages:
+```bash
+$ pip install -r requirements.txt
 ``` 
-  4. Do a database migration
-```python
-python manage.py makemigrations
-python manage.py migrate
+  5. Create and Apply migrations:
+```bash
+$ python manage.py makemigrations
+$ python manage.py migrate
 ``` 
-  5. Create a superuser
-```python
-python manage.py createsuperuser
+  6. Create superuser to help managing for the first time:
+```bash
+$ python manage.py createsuperuser
 ``` 
-  6. In the folder with the manage.py file, run the command:
+  6. Start the Django server:
 ```python
-python manage.py runserver
+$ python manage.py runserver
 ``` 
+
+**Using the App with local development server**
+In the browser go to
+
+  * http://127.0.0.1:8000/ to interact with the app's backend as a user.
+  * http://127.0.0.1:8000/admin/ to update records using django's built-in admin module.
 
 ## Bugs and suggestions
 
 If you have found a bug or if you have a request for additional functionality, please use the issue tracker on GitHub.
 
-https://github.com/botalov-pro/BigHouzzz
+https://github.com/botalov-pro/BigHouzzz/issues
 
 ## Author
 
