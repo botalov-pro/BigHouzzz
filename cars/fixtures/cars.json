@@ -1,0 +1,26 @@
+[
+{
+  "model": "cars.vehicle",
+  "pk": 1,
+  "fields": {
+    "Regnum": "В776УС77",
+    "IsRegnumAlien": false,
+    "Model": "Aurus Senat",
+    "Color": "Черный",
+    "Created": "2023-11-14T19:21:18.743Z",
+    "Updated": "2023-11-14T19:22:33.871Z"
+  }
+},
+{
+  "model": "cars.vehicle",
+  "pk": 2,
+  "fields": {
+    "Regnum": "М126СЕ750",
+    "IsRegnumAlien": false,
+    "Model": "Opel Astra",
+    "Color": "Белый",
+    "Created": "2023-11-14T19:22:30.253Z",
+    "Updated": "2023-11-14T19:22:30.253Z"
+  }
+}
+]
