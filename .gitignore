@@ -43,5 +43,24 @@ db.sqlite3-journal
 .LSOverride
 
 # Static and Media files
-static/
-media/
+# static/
+# media/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Backup files
+*.bak
