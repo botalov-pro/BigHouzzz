@@ -39,6 +39,7 @@ $ python -m venv venv
 
 # Activate the virtual environment in Windows (In git bash)
 $ source venv/Scripts/activate
+
 # Activate the virtual environment in Linux/Mac
 $ source venv/bin/activate
 ```
@@ -60,8 +61,12 @@ $ python manage.py migrate
 ```bash
 $ python manage.py createsuperuser
 ``` 
-  6. Start the Django server:
-```python
+  7. Load fixtures with demo data:
+```bash
+$ python manage.py loaddata cars/fixtures/cars.json
+``` 
+ 8. Start the Django server:
+```bash
 $ python manage.py runserver
 ``` 
 
