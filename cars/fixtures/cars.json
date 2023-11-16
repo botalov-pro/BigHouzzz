@@ -3,10 +3,10 @@
   "model": "cars.vehicle",
   "pk": 1,
   "fields": {
-    "Regnum": "Â776ÓÑ77",
+    "Regnum": "Ð’776Ð£Ð¡77",
     "IsRegnumAlien": false,
     "Model": "Aurus Senat",
-    "Color": "×åðíûé",
+    "Color": "Ð§ÐµÑ€Ð½Ñ‹Ð¹",
     "Created": "2023-11-14T19:21:18.743Z",
     "Updated": "2023-11-14T19:22:33.871Z"
   }
@@ -15,10 +15,10 @@
   "model": "cars.vehicle",
   "pk": 2,
   "fields": {
-    "Regnum": "Ì126ÑÅ750",
+    "Regnum": "Ðœ126Ð¡Ð•750",
     "IsRegnumAlien": false,
     "Model": "Opel Astra",
-    "Color": "Áåëûé",
+    "Color": "Ð‘ÐµÐ»Ñ‹Ð¹",
     "Created": "2023-11-14T19:22:30.253Z",
     "Updated": "2023-11-14T19:22:30.253Z"
   }
