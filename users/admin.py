@@ -55,7 +55,6 @@ class CustomUserAdmin(admin.ModelAdmin):
         'last_login',
         'date_joined',
     ]
-    inlines = [VehiclesInline,]
     empty_value_display = EMPTY_VALUE_DISPLAY
 
     # Возвращаем изображение аватарки
