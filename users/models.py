@@ -3,4 +3,14 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    image = models.ImageField(upload_to='users_images', blank=True)
+#    birth_date = models.DateField(blank=True, null=True)
+    avatar = models.ImageField(
+        'Аватар',
+        upload_to='users_images',
+        blank=True,
+        null=True
+    )
+    agreement_accepted = models.BooleanField(
+        'Пользовательское соглашение',
+        default=False
+    )
