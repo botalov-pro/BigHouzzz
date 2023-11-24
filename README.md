@@ -11,6 +11,7 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
   * django-bootstrap v5
   * django-environ 0.11.2
   * pillow 10.1.0
+  * Trusted browser: Google Chrome v. 119.0.6045.160 (64 bit)
 
 ## 🚀 Features
 
