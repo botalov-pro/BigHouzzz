@@ -49,6 +49,10 @@ class Vehicle(models.Model):
     Color = models.CharField('Цвет', max_length=200, default=None)
     Created = models.DateTimeField('Дата создания', auto_now_add=True)
     Updated = models.DateTimeField('Дата обновления', auto_now=True)
+    is_active = models.BooleanField(
+        'Активный',
+        default=True
+    )
 
     class Meta:
         verbose_name = 'Транспортное средство'
