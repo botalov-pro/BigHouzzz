@@ -1,6 +1,6 @@
 # BigHouzz
 
-🏘️ **BigHouzz** is a web app for managing relationships with neighbors in multi-apartment residential buildings
+🏘️ **BigHouzz** is a full-stack web application for managing relationships with neighbors in multi-apartment residential buildings
 
 The code uses [Django](https://www.djangoproject.com/) as the website engine, and [Bootstrap](https://getbootstrap.com/) for the user interface.
 
@@ -9,12 +9,24 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
   * [Python 3.12](https://www.python.org/downloads/)
   * Django 4.2.6
   * django-bootstrap v5
-  * django-environ 0.11.2
   * pillow 10.1.0
+  * django-environ 0.11.2
   * Trusted browser: Google Chrome v. 119.0.6045.160 (64 bit)
 
 ## 🚀 Features
 
+### Frontend pages
+  * Home
+  * About
+  * Administration
+  * Register
+  * Login
+
+### Design specification
+  * Use Any Bootstrap icon Logo (frontend)
+  * Mobile Friendly
+
+### Functionality specification
   * User Registration
   * Vehicles Registration
   * About project and Contact pages
@@ -23,6 +35,11 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
 ***TODO and Features will come in the future***
 
 You can see in [TODO](TODO.md).
+
+## Screenshots
+  * Home
+  * About
+  * Contacts
 
 ## ⚡ Main Technologies
 <code>Python</code> <code>Django</code> <code>Django-environ</code> <code>HTML</code> <code>CSS</code> <code>Bootstrap</code> <code>pillow</code> 
@@ -85,4 +102,4 @@ https://github.com/botalov-pro/BigHouzzz/issues
 
 ## Author
 
-Developed and maintained by [Konstantin Botalov](https://botalov.pro)
+Developed and maintained by [Konstantin Botalov](mailto:konstantin@botalov.pro)
