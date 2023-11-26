@@ -57,7 +57,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     ]
     empty_value_display = EMPTY_VALUE_DISPLAY
 
-    # Возвращаем изображение аватарки
+    # Возвращаем изображение для аватарки
     def avatar_image(self, obj):
         if obj.avatar:
             return mark_safe(
@@ -65,9 +65,10 @@ class CustomUserAdmin(admin.ModelAdmin):
         else:
             return mark_safe(f'<img src="" alt="">')
 
-    # Переназываем метку поля для аватара
+    # Переназываем поле для изображения аватарки
     avatar_image.short_description = 'Аватар'
 
-    @admin.display(description='Фамилия, имя, отчество')
+    # Возвращаем полное имя пользователя + имя пользователя
+    @admin.display(description='Фамилия, имя, отчество (имя пользователя)')
     def full_name(self, obj):
         return f'{obj.last_name} {obj.first_name} ({obj.username})'
