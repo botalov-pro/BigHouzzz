@@ -4,7 +4,26 @@ from .models import Vehicle
 
 
 @admin.register(Vehicle)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ['Regnum', 'Model', 'IsRegnumAlien', 'Created', 'Updated']
-    list_filter = ['Created', 'Updated']
+class VehiclesAdmin(admin.ModelAdmin):
+    list_display = [
+        'Regnum',
+        'Model',
+        'IsRegnumAlien',
+        'Created',
+        'Updated',
+        'is_active',
+    ]
+    list_filter = [
+        'Created',
+        'Updated',
+        'is_active',
+    ]
+    search_fields = [
+        'Regnum',
+        'Model',
+    ]
+    readonly_fields = [
+        'Created',
+        'Updated',
+    ]
     empty_value_display = EMPTY_VALUE_DISPLAY
