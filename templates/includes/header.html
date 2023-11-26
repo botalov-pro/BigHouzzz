@@ -16,6 +16,16 @@
                             <li class="nav-item">
                                 <a class="nav-link
                                     {% if request.resolver_match.view_name  == 'cars:cars_index' %}active{% endif %}"
+                                   href="{% url 'cars:cars_index' %}">Квартиры</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link
+                                    {% if request.resolver_match.view_name  == 'cars:cars_index' %}active{% endif %}"
+                                   href="{% url 'cars:cars_index' %}">Дома</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link
+                                    {% if request.resolver_match.view_name  == 'cars:cars_index' %}active{% endif %}"
                                    href="{% url 'cars:cars_index' %}">Транспорт</a>
                             </li>
                             <li class="nav-item">
