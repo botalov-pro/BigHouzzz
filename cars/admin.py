@@ -5,6 +5,7 @@ from .models import Vehicle
 
 @admin.register(Vehicle)
 class VehiclesAdmin(admin.ModelAdmin):
+    """ Транспортные средства - Администрирование """
     list_display = [
         'Regnum',
         'Model',

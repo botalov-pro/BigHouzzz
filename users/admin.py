@@ -6,6 +6,7 @@ from users.models import User
 
 @admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):
+    """ Пользователи - Администрирование """
     fieldsets = [
         (
             None,
