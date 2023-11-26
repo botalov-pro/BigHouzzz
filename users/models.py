@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
 #    birth_date = models.DateField(blank=True, null=True)
+    """ Пользователи """
     avatar = models.ImageField(
         'Аватар',
         upload_to='users_images',

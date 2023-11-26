@@ -2,6 +2,7 @@ from django.db import models
 
 
 class House(models.Model):
+    """ Дом """
     number = models.CharField(
         verbose_name='Номер дома',
         max_length=3
@@ -27,6 +28,7 @@ class House(models.Model):
 
 
 class Room(models.Model):
+    """ Помещение """
     number = models.CharField(
         verbose_name='Номер квартиры',
         max_length=3

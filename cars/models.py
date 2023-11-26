@@ -42,6 +42,7 @@ class VehicleModel(models.Model):
 
 
 class Vehicle(models.Model):
+    """ Транспортное средство """
     Regnum = models.CharField('Регистрационный знак', max_length=10, db_index=True)
     IsRegnumAlien = models.BooleanField('Иностранный?', default=False)
     Model = models.CharField('Модель', max_length=200)
