@@ -1,4 +1,5 @@
 # BigHouzz
+### by Konstantin Botalov
 
 🏘️ **BigHouzz** is a web app for managing relationships with neighbors in multi-apartment residential buildings
 
