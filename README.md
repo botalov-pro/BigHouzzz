@@ -6,7 +6,7 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
 
 ## System Requirements
 
-  * [Python 3.12](https://www.python.org/downloads/)
+  * [Python 3.10.1](https://www.python.org/downloads/)
   * Django 4.2.6
   * django-bootstrap v5
   * pillow 10.1.0
