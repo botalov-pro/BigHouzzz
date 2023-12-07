@@ -43,12 +43,12 @@ class VehicleModel(models.Model):
 
 class Vehicle(models.Model):
     """ Транспортное средство """
-    Regnum = models.CharField('Регистрационный знак', max_length=10, db_index=True)
-    IsRegnumAlien = models.BooleanField('Иностранный?', default=False)
-    Model = models.CharField('Модель', max_length=200)
-    Color = models.CharField('Цвет', max_length=200, default=None)
-    Created = models.DateTimeField('Дата создания', auto_now_add=True)
-    Updated = models.DateTimeField('Дата обновления', auto_now=True)
+    regnum = models.CharField('Регистрационный знак', max_length=10, db_index=True)
+    is_alien = models.BooleanField('Иностранный?', default=False)
+    model = models.CharField('Модель', max_length=200)
+    color = models.CharField('Цвет', max_length=200, default=None)
+    created = models.DateTimeField('Дата создания', auto_now_add=True)
+    updated = models.DateTimeField('Дата обновления', auto_now=True)
     is_active = models.BooleanField(
         'Активный',
         default=True
@@ -57,7 +57,7 @@ class Vehicle(models.Model):
     class Meta:
         verbose_name = 'Транспортное средство'
         verbose_name_plural = 'Транспортные средства'
-        ordering = ('Regnum',)
+        ordering = ('regnum',)
 
     def __str__(self):
-        return self.Regnum
+        return self.regnum

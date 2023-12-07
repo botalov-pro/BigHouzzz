@@ -18,9 +18,9 @@
     {% for vehicle in vehicles %}
     <tr>
       <th scope="row">{{ forloop.counter }}</th>
-      <td>{{ vehicle.Regnum }}</td>
-      <td>{{ vehicle.Model }}</td>
-      <td>{{ vehicle.Color }}</td>
+      <td>{{ vehicle.regnum }}</td>
+      <td>{{ vehicle.model }}</td>
+      <td>{{ vehicle.color }}</td>
       <td><a class="btn btn-success" href="{% url 'cars:car_detail' vehicle.id %}" role="button">Детали</a></td>
     </tr>
     {% endfor %}

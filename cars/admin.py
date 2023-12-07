@@ -7,24 +7,24 @@ from .models import Vehicle
 class VehiclesAdmin(admin.ModelAdmin):
     """ Транспортные средства - Администрирование """
     list_display = [
-        'Regnum',
-        'Model',
-        'IsRegnumAlien',
-        'Created',
-        'Updated',
+        'regnum',
+        'model',
+        'is_alien',
+        'created',
+        'updated',
         'is_active',
     ]
     list_filter = [
-        'Created',
-        'Updated',
+        'created',
+        'updated',
         'is_active',
     ]
     search_fields = [
-        'Regnum',
-        'Model',
+        'regnum',
+        'model',
     ]
     readonly_fields = [
-        'Created',
-        'Updated',
+        'created',
+        'updated',
     ]
     empty_value_display = EMPTY_VALUE_DISPLAY
