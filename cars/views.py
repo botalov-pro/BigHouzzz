@@ -3,6 +3,7 @@ from .models import Vehicle
 
 
 def cars_index(request):
+    """ Список транспортных средств """
     num_vehicles = Vehicle.objects.count()
     vehicles = Vehicle.objects.all()
     context = {
@@ -12,6 +13,7 @@ def cars_index(request):
     return render(request, 'cars/index.html', context)
 
 def car_detail(request, car_id):
+    """ Транспортное средство детально """
     vehicle = get_object_or_404(Vehicle, pk=car_id)
     context = {
         'vehicle': vehicle,
