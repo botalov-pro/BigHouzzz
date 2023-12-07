@@ -5,20 +5,20 @@
     {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Создать аккаунт</h1>
     <div class="form-floating">
-        {{ form.first_name }}
-        <label for="{{ form.first_name.id_for_label }}">Имя</label>
-    </div>
-    <div class="form-floating">
-        {{ form.last_name }}
-        <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+        {{ form.username }}
+        <label for="{{ form.username.id_for_label }}">Имя пользователя (логин)</label>
     </div>
     <div class="form-floating">
         {{ form.email }}
         <label for="{{ form.email.id_for_label }}">Адрес эл. почты</label>
     </div>
     <div class="form-floating">
-        {{ form.username }}
-        <label for="{{ form.username.id_for_label }}">Имя пользователя (логин)</label>
+        {{ form.first_name }}
+        <label for="{{ form.first_name.id_for_label }}">Имя</label>
+    </div>
+    <div class="form-floating">
+        {{ form.last_name }}
+        <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
     </div>
     <div class="form-floating">
         {{ form.password1 }}
