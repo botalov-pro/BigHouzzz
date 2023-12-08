@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from BigHouzzz.settings import EMPTY_VALUE_DISPLAY
-from users.models import User
+from users.models import User, AbstractUser
 
 
 @admin.register(User)
@@ -21,6 +21,16 @@ class CustomUserAdmin(admin.ModelAdmin):
             },
         ),
         (
+            'Группы и права',
+            {
+                "classes": ['collapse'],
+                "fields": [
+                    'groups',
+                    'user_permissions',
+                ],
+            },
+        ),
+        (
             'Дополнительно',
             {
                 "classes": ['collapse'],
@@ -34,12 +44,13 @@ class CustomUserAdmin(admin.ModelAdmin):
         ),
     ]
     list_display = [
-        'full_name',
         'avatar_image',
+        'full_name',
         'agreement_accepted',
         'last_login',
         'is_active',
     ]
+    list_display_links = ['full_name', ]
     list_filter = [
         'is_staff',
         'is_active',
@@ -61,10 +72,14 @@ class CustomUserAdmin(admin.ModelAdmin):
         'last_login',
         'date_joined',
     ]
+    filter_horizontal = [
+        'groups',
+        'user_permissions',
+    ]
     empty_value_display = EMPTY_VALUE_DISPLAY
 
-    # Возвращаем изображение для аватарки
     def avatar_image(self, obj):
+        """ Возвращаем изображение для аватарки """
         if obj.avatar:
             return mark_safe(
                 f'<img src="{obj.avatar.url}" alt="" height="50px">')
@@ -74,7 +89,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     # Переназываем поле для изображения аватарки
     avatar_image.short_description = 'Аватар'
 
-    # Возвращаем полное имя пользователя + имя пользователя
     @admin.display(description='Фамилия, имя, отчество (имя пользователя)')
     def full_name(self, obj):
+        """ Возвращаем полное имя пользователя + имя пользователя """
         return f'{obj.last_name} {obj.first_name} {obj.patronymic_name} ({obj.username})'

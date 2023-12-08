@@ -1,13 +1,14 @@
 from django.contrib import admin
 from BigHouzzz.settings import EMPTY_VALUE_DISPLAY
 from .models import Vehicle, VehicleCategory
-from users.models import User
+
 
 class DriverAdminInline(admin.TabularInline):
     model = Vehicle.drivers.through
     verbose_name = 'Водитель'
     verbose_name_plural = 'Водители'
-    extra = 1  # Количество дополнительных пустых строк в форме
+    extra = 0  # Количество дополнительных пустых строк в форме
+    classes = ['collapse']
 
 
 @admin.register(VehicleCategory)
@@ -46,7 +47,7 @@ class VehiclesAdmin(admin.ModelAdmin):
             {
                 "classes": ['collapse'],
                 "fields": [
-#                    'drivers',
+                    'drivers',
                 ],
             },
         ),
@@ -88,5 +89,15 @@ class VehiclesAdmin(admin.ModelAdmin):
     ordering = [
         'regnum',
     ]
+    filter_horizontal = [
+        'drivers',
+    ]
     inlines = (DriverAdminInline, )
+    model = Vehicle
     empty_value_display = EMPTY_VALUE_DISPLAY
+
+    def get_inline_instances(self, request, obj=None):
+        if not obj:
+            return list()
+        return super(VehiclesAdmin, self).get_inline_instances(request, obj)
+

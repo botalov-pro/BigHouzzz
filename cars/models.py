@@ -76,7 +76,8 @@ class Vehicle(models.Model):
     )
     drivers = models.ManyToManyField(
         User,
-        verbose_name='Водители'
+        through='VehiclesDrivers',
+        verbose_name='Водители',
     )
     created = models.DateTimeField(
         'Дата создания',
@@ -98,3 +99,9 @@ class Vehicle(models.Model):
 
     def __str__(self):
         return self.regnum
+
+through='VehiclesDrivers'
+
+class VehiclesDrivers(models.Model):
+    driver = models.ForeignKey(User, on_delete=models.CASCADE)
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
