@@ -44,7 +44,7 @@ def profile(request):
         if profile_form.is_valid():
             profile_form.save()  # Сохраняем форму
             return redirect('profile')  # Переадресация на страницу профиля
-    else:
+    else:  # Если не POST-запрос, то
         profile_form = UserProfileForm(instance=request.user)
     context = {
         'form': profile_form
