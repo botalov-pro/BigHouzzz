@@ -1,4 +1,5 @@
 from django.db import models
+from core.models import Colors
 
 
 class VehicleCategory(models.Model):
@@ -49,12 +50,38 @@ class VehicleModel(models.Model):
 
 class Vehicle(models.Model):
     """ Транспортное средство """
-    regnum = models.CharField('Регистрационный знак', max_length=10, db_index=True)
-    is_alien = models.BooleanField('Иностранный?', default=False)
+    regnum = models.CharField(
+        'Регистрационный знак',
+        max_length=10,
+        db_index=True
+    )
+    is_alien = models.BooleanField(
+        'Иностранный?',
+        default=False
+    )
+    category = models.ForeignKey(
+        VehicleCategory,
+        verbose_name='Тип ТС',
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+    )
     model = models.CharField('Модель', max_length=200)
-    color = models.CharField('Цвет', max_length=200, default=None)
-    created = models.DateTimeField('Дата создания', auto_now_add=True)
-    updated = models.DateTimeField('Дата обновления', auto_now=True)
+    color = models.ForeignKey(
+        Colors,
+        verbose_name='Цвет',
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+    )
+    created = models.DateTimeField(
+        'Дата создания',
+        auto_now_add=True
+    )
+    updated = models.DateTimeField(
+        'Дата обновления',
+        auto_now=True
+    )
     is_active = models.BooleanField(
         'Активный',
         default=True
