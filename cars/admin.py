@@ -34,6 +34,15 @@ class VehiclesAdmin(admin.ModelAdmin):
             },
         ),
         (
+            'Водители',
+            {
+                "classes": ['collapse'],
+                "fields": [
+                    'drivers',
+                ],
+            },
+        ),
+        (
             'Дополнительно',
             {
                 "classes": ['collapse'],

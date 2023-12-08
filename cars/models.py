@@ -1,6 +1,6 @@
 from django.db import models
 from core.models import Colors
-
+from users.models import User
 
 class VehicleCategory(models.Model):
     """ Категория транспортного средства """
@@ -73,6 +73,10 @@ class Vehicle(models.Model):
         on_delete=models.PROTECT,
         blank=True,
         null=True,
+    )
+    drivers = models.ManyToManyField(
+        User,
+        verbose_name='Водители'
     )
     created = models.DateTimeField(
         'Дата создания',
