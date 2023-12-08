@@ -1,10 +1,18 @@
 from django.contrib import admin
 from BigHouzzz.settings import EMPTY_VALUE_DISPLAY
 from .models import Vehicle, VehicleCategory
+from users.models import User
+
+class DriverAdminInline(admin.TabularInline):
+    model = Vehicle.drivers_set.through
+    verbose_name = 'Водитель'
+    verbose_name_plural = 'Водители'
+    extra = 1  # Количество дополнительных пустых строк в форме
 
 
 @admin.register(VehicleCategory)
 class VehicleCategoryAdmin(admin.ModelAdmin):
+    """ Категории транспортных средств - Администрирование """
     list_display = [
         'name',
         'is_active',
@@ -38,7 +46,7 @@ class VehiclesAdmin(admin.ModelAdmin):
             {
                 "classes": ['collapse'],
                 "fields": [
-                    'drivers',
+#                    'drivers',
                 ],
             },
         ),
@@ -57,9 +65,11 @@ class VehiclesAdmin(admin.ModelAdmin):
         'model',
         'created',
         'updated',
+        'category',
         'is_active',
     ]
     list_filter = [
+        'category',
         'model',
         'color',
         'created',
@@ -75,4 +85,8 @@ class VehiclesAdmin(admin.ModelAdmin):
         'created',
         'updated',
     ]
+    ordering = [
+        'regnum',
+    ]
+    inlines = (DriverAdminInline, )
     empty_value_display = EMPTY_VALUE_DISPLAY
