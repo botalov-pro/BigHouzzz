@@ -4,13 +4,20 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     """ Пользователи """
+    patronymic_name = models.CharField(
+        'Отчество',
+        max_length=50,
+        blank=True
+    )
     birth_date = models.DateField(
+        'Дата рождения',
         blank=True,
         null=True
     )
     phone_number = models.CharField(
         'Номер телефона',
-        max_length=12
+        max_length=12,
+        blank=True
     )
     avatar = models.ImageField(
         'Аватар',
