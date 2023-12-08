@@ -4,7 +4,7 @@ from .models import Vehicle, VehicleCategory
 from users.models import User
 
 class DriverAdminInline(admin.TabularInline):
-    model = Vehicle.drivers_set.through
+    model = Vehicle.drivers.through
     verbose_name = 'Водитель'
     verbose_name_plural = 'Водители'
     extra = 1  # Количество дополнительных пустых строк в форме
