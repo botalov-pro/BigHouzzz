@@ -13,8 +13,9 @@ class CustomUserAdmin(admin.ModelAdmin):
             {
                 'fields': [
                     ('avatar_image', 'username'),
-                    ('last_name', 'first_name'),
-                    'email',
+                    ('last_name', 'first_name', 'patronymic_name'),
+                    ('email', 'phone_number'),
+                    'birth_date',
                     'is_active',
                 ],
             },
@@ -25,6 +26,7 @@ class CustomUserAdmin(admin.ModelAdmin):
                 "classes": ['collapse'],
                 "fields": [
                     'agreement_accepted',
+                    'verify',
                     'avatar',
                     ('last_login', 'date_joined'),
                 ],
@@ -41,6 +43,7 @@ class CustomUserAdmin(admin.ModelAdmin):
     list_filter = [
         'is_staff',
         'is_active',
+        'verify',
         'agreement_accepted',
         'last_login',
         'date_joined'
@@ -50,8 +53,10 @@ class CustomUserAdmin(admin.ModelAdmin):
         'username',
         'first_name',
         'last_name',
+        'patronymic_name',
     ]
     readonly_fields = [
+        'agreement_accepted',
         'avatar_image',
         'last_login',
         'date_joined',
@@ -72,4 +77,4 @@ class CustomUserAdmin(admin.ModelAdmin):
     # Возвращаем полное имя пользователя + имя пользователя
     @admin.display(description='Фамилия, имя, отчество (имя пользователя)')
     def full_name(self, obj):
-        return f'{obj.last_name} {obj.first_name} ({obj.username})'
+        return f'{obj.last_name} {obj.first_name} {obj.patronymic_name} ({obj.username})'
