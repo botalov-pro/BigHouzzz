@@ -6,7 +6,9 @@ class VehicleCategory(models.Model):
     name = models.CharField('Категория', max_length=100)
     icon = models.ImageField(
         'Путь до иконки',
-        upload_to='img_category'
+        upload_to='img_category',
+        blank=True,
+        null=True
     )
     is_active = models.BooleanField(
         'Активный',
@@ -17,8 +19,8 @@ class VehicleCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name = 'Категория ТС'
+        verbose_name_plural = 'Категории ТС'
 
 
 class VehicleBrand(models.Model):
