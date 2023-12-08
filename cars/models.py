@@ -8,6 +8,10 @@ class VehicleCategory(models.Model):
         'Путь до иконки',
         upload_to='img_category'
     )
+    is_active = models.BooleanField(
+        'Активный',
+        default=True
+    )
 
     def __str__(self):
         return self.name
