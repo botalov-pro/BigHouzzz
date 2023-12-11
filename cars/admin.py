@@ -72,6 +72,7 @@ class VehiclesAdmin(admin.ModelAdmin):
         'category',
         'is_active',
     ]
+    list_display_links = ['regnum', ]
     list_filter = [
         'category',
         'model',
