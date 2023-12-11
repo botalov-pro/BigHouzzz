@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 from BigHouzzz.settings import EMPTY_VALUE_DISPLAY
 from .models import Vehicle, VehicleCategory
 
@@ -39,6 +40,7 @@ class VehiclesAdmin(admin.ModelAdmin):
                     'model',
                     'color',
                     'is_active',
+                    ('vehicle_image', 'main_image'),
                 ],
             },
         ),
@@ -62,6 +64,7 @@ class VehiclesAdmin(admin.ModelAdmin):
         ),
     ]
     list_display = [
+        'vehicle_image',
         'regnum',
         'model',
         'created',
@@ -83,6 +86,7 @@ class VehiclesAdmin(admin.ModelAdmin):
         'model',
     ]
     readonly_fields = [
+        'vehicle_image',
         'created',
         'updated',
     ]
@@ -96,8 +100,13 @@ class VehiclesAdmin(admin.ModelAdmin):
     model = Vehicle
     empty_value_display = EMPTY_VALUE_DISPLAY
 
-    def get_inline_instances(self, request, obj=None):
-        if not obj:
-            return list()
-        return super(VehiclesAdmin, self).get_inline_instances(request, obj)
+    def vehicle_image(self, obj):
+        """ Возвращаем изображение для миниатюры ТС """
+        if obj.main_image:
+            return mark_safe(
+                f'<img src="{obj.main_image.url}" alt="" height="50px">')
+        else:
+            return mark_safe(f'<img src="" alt="">')
 
+    # Переназываем поле для изображения миниатюры ТС
+    vehicle_image.short_description = 'Миниатюра'
