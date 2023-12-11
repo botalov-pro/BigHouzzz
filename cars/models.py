@@ -69,7 +69,7 @@ class Vehicle(models.Model):
     model = models.CharField('Модель', max_length=200)
     color = models.ForeignKey(
         Colors,
-        verbose_name='Цвет',
+        verbose_name='Цвет кузова',
         on_delete=models.PROTECT,
         blank=True,
         null=True,
