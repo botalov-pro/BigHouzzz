@@ -1,23 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Транспорт - подробно{% endblock %}
 {% block content %}
 <div class="container-fluid">
-  <h1>Транспорт - подробно</h1>
-  <table class="table">
-    <tbody>
-    <tr>
-      <th scope="row">Рег. знак:</th>
-      <td>{{ vehicle.regnum }}</td>
-    </tr>
-    <tr>
-      <th scope="row">Модель:</th>
-      <td>{{ vehicle.model }}</td>
-    </tr>
-    <tr>
-      <th scope="row">Цвет:</th>
-      <td>{{ vehicle.color }}</td>
-    </tr>
-    </tbody>
-  </table>
+    <h1>Информация о транспортном средстве:</h1>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% if vehicle.main_image %} {{ vehicle.main_image.url }} {% else %} {% static 'vendor/img/vehicles/default_vehicle.jpeg' %} {% endif %}"
+                     class="img-fluid rounded">
+            </div>
+            <div class="col-md-8">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th scope="row" class="table-primary text-end">Рег.
+                            знак:
+                        </th>
+                        <td class="table-primary">{{ vehicle.regnum|upper }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-end">Категория ТС:</th>
+                        <td>{{ vehicle.category }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-end">Модель:</th>
+                        <td>{{ vehicle.model }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-end">Цвет кузова:</th>
+                        <td>{{ vehicle.color|default_if_none:"---" }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
