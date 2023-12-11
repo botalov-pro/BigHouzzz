@@ -74,10 +74,12 @@ class Vehicle(models.Model):
         blank=True,
         null=True,
     )
-    drivers = models.ManyToManyField(
+    driver = models.ForeignKey(
         User,
-        through='VehiclesDrivers',
-        verbose_name='Водители',
+        verbose_name='Водитель',
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
     )
     created = models.DateTimeField(
         'Дата создания',
@@ -90,6 +92,12 @@ class Vehicle(models.Model):
     is_active = models.BooleanField(
         'Активный',
         default=True
+    )
+    main_image = models.ImageField(
+        'Основное изображение',
+        upload_to='vehicles_images',
+        blank=True,
+        null=True
     )
 
     class Meta:
