@@ -4,12 +4,12 @@ from BigHouzzz.settings import EMPTY_VALUE_DISPLAY
 from .models import Vehicle, VehicleCategory
 
 
-class DriverAdminInline(admin.TabularInline):
-    model = Vehicle.drivers.through
-    verbose_name = 'Водитель'
-    verbose_name_plural = 'Водители'
-    extra = 0  # Количество дополнительных пустых строк в форме
-    classes = ['collapse']
+#class DriverAdminInline(admin.TabularInline):
+#    model = Vehicle.drivers.through
+#    verbose_name = 'Водитель'
+#    verbose_name_plural = 'Водители'
+#    extra = 0  # Количество дополнительных пустых строк в форме
+#    classes = ['collapse']
 
 
 @admin.register(VehicleCategory)
@@ -49,7 +49,7 @@ class VehiclesAdmin(admin.ModelAdmin):
             {
                 "classes": ['collapse'],
                 "fields": [
-                    'drivers',
+                    'driver',
                 ],
             },
         ),
@@ -93,11 +93,11 @@ class VehiclesAdmin(admin.ModelAdmin):
     ordering = [
         'regnum',
     ]
-    filter_horizontal = [
-        'drivers',
-    ]
-    inlines = (DriverAdminInline, )
-    model = Vehicle
+#    filter_horizontal = [
+#        'driver',
+#    ]
+#    inlines = (DriverAdminInline, )
+#    model = Vehicle
     empty_value_display = EMPTY_VALUE_DISPLAY
 
     def vehicle_image(self, obj):
