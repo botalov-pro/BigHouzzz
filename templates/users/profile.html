@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load static %} {# FIXME: Проблема с отображением статики, если убрать это #}
+{% load static %}
 {% block title %}Профиль{% endblock %}
 {% block content %}
 <h1 class="h3 mb-3 fw-normal">Профиль</h1>
-<img width="100" height="100" src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" class="img-thumbnail"> {# FIXME: Проблема с отображением статики #}
+<img width="100" height="100" src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" class="img-thumbnail">
 <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-floating">
