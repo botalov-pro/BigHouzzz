@@ -5,6 +5,13 @@
     {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Создать аккаунт</h1>
     <div class="form-floating">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                {{ form.errors }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="form-floating">
         {{ form.username }}
         <label for="{{ form.username.id_for_label }}">Имя пользователя (логин)</label>
     </div>
@@ -27,11 +34,6 @@
     <div class="form-floating">
         {{ form.password2 }}
         <label for="{{ form.password2.id_for_label }}">Подтверждение пароля</label>
-    </div>
-    <div class="form-floating">
-        {% if form.errors %}
-            {{ form.errors }}
-        {% endif %}
     </div>
     <button class="btn btn-lg btn-primary" type="submit">Создать</button>
 </form>
