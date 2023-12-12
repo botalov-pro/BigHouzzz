@@ -1,26 +1,113 @@
 [
 {
+  "model": "cars.vehiclecategory",
+  "pk": 1,
+  "fields": {
+    "name": "Легковой автомобиль",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 2,
+  "fields": {
+    "name": "Грузовой автомобиль",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 3,
+  "fields": {
+    "name": "Автобус",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 4,
+  "fields": {
+    "name": "Велосипед",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 5,
+  "fields": {
+    "name": "Прицеп",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 6,
+  "fields": {
+    "name": "Сани",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
+  "model": "cars.vehiclecategory",
+  "pk": 7,
+  "fields": {
+    "name": "Самокат",
+    "icon": "",
+    "is_active": true
+  }
+},
+{
   "model": "cars.vehicle",
   "pk": 1,
   "fields": {
-    "Regnum": "В776УС77",
-    "IsRegnumAlien": false,
-    "Model": "Aurus Senat",
-    "Color": "Черный",
-    "Created": "2023-11-14T19:21:18.743Z",
-    "Updated": "2023-11-14T19:22:33.871Z"
+    "regnum": "у878сн86",
+    "is_alien": false,
+    "category": 1,
+    "model": "Toyota Camry",
+    "color": 2,
+    "driver": null,
+    "created": "2023-12-11T16:12:41.785Z",
+    "updated": "2023-12-11T19:21:06.579Z",
+    "is_active": true,
+    "main_image": "static/vendor/img/vehicles/y878ch86.jpg"
   }
 },
 {
   "model": "cars.vehicle",
   "pk": 2,
   "fields": {
-    "Regnum": "М126СЕ750",
-    "IsRegnumAlien": false,
-    "Model": "Opel Astra",
-    "Color": "Белый",
-    "Created": "2023-11-14T19:22:30.253Z",
-    "Updated": "2023-11-14T19:22:30.253Z"
+    "regnum": "B428MK186",
+    "is_alien": false,
+    "category": 1,
+    "model": "Skoda Kodiaq",
+    "color": 3,
+    "driver": null,
+    "created": "2023-12-11T19:35:59.532Z",
+    "updated": "2023-12-11T19:36:10.653Z",
+    "is_active": true,
+    "main_image": "static/vendor/img/vehicles/b428mk186.jpg"
+  }
+},
+{
+  "model": "cars.vehicle",
+  "pk": 3,
+  "fields": {
+    "regnum": "t895yo72",
+    "is_alien": false,
+    "category": 2,
+    "model": "Газель",
+    "color": 1,
+    "driver": null,
+    "created": "2023-12-11T19:41:18.747Z",
+    "updated": "2023-12-11T21:47:38.293Z",
+    "is_active": true,
+    "main_image": "static/vendor/img/vehicles/t895yo72.jpg"
   }
 }
 ]

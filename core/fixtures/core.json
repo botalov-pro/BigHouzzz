@@ -1,0 +1,29 @@
+[
+{
+  "model": "core.colors",
+  "pk": 1,
+  "fields": {
+    "name": "Белый",
+    "description": "",
+    "is_active": true
+  }
+},
+{
+  "model": "core.colors",
+  "pk": 2,
+  "fields": {
+    "name": "Серый",
+    "description": "",
+    "is_active": true
+  }
+},
+{
+  "model": "core.colors",
+  "pk": 3,
+  "fields": {
+    "name": "Коричневый",
+    "description": "",
+    "is_active": true
+  }
+}
+]
