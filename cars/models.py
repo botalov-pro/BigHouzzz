@@ -107,9 +107,3 @@ class Vehicle(models.Model):
 
     def __str__(self):
         return self.regnum
-
-through='VehiclesDrivers'
-
-class VehiclesDrivers(models.Model):
-    driver = models.ForeignKey(User, on_delete=models.CASCADE)
-    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
