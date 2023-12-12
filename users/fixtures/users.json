@@ -6,7 +6,7 @@
     "password": "pbkdf2_sha256$390000$GGgXau95oLwBfefWYCMGAn$x7Zv+sdr03sPYCun2FJKifnJf49jyHy2dZzqb3kkxEA=",
     "last_login": "2023-12-11T23:50:36.802Z",
     "is_superuser": true,
-    "username": "admin",
+    "username": "admin2",
     "first_name": "Админ",
     "last_name": "Админов",
     "email": "admin@admin.local",
@@ -16,11 +16,11 @@
     "patronymic_name": "Админович",
     "birth_date": "2000-01-01",
     "phone_number": "+00000000000",
-    "avatar": "static/vendor/img/users/default_avatar.png",
+    "avatar": "users_images/demo_man_avatar.jpeg",
     "agreement_accepted": false,
     "verify": false,
     "groups": [],
     "user_permissions": []
   }
-},
+}
 ]
