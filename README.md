@@ -19,9 +19,11 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
 ### Frontend pages
   * Home
   * About
+  * Contacts
   * Administration
   * Register
   * Login
+  * Vehicle
 
 ### Design specification
   * Use Any Bootstrap icon Logo (frontend)
@@ -39,8 +41,11 @@ You can see in [TODO](TODO.md).
 
 ## Screenshots
   * Home
-  * About
-  * Contacts
+![1_home.png](static/vendor/img/screenshots/1_home.png)
+  * Vehicles Index Page
+![2_vehicles.png](static/vendor/img/screenshots/2_vehicles.png)
+  * Vehicles Detail Page
+![3_vehicles_details.png](static/vendor/img/screenshots/3_vehicles_details.png)
 
 ## ⚡ Main Technologies
 <code>Python</code> <code>Django</code> <code>Django-environ</code> <code>HTML</code> <code>CSS</code> <code>Bootstrap</code> <code>pillow</code> 
@@ -82,6 +87,8 @@ $ python manage.py createsuperuser
 ``` 
   7. Load fixtures with demo data:
 ```bash
+$ python manage.py loaddata users/fixtures/users.json
+$ python manage.py loaddata core/fixtures/core.json
 $ python manage.py loaddata cars/fixtures/cars.json
 ``` 
  8. Start the Django server:
