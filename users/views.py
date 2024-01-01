@@ -4,6 +4,7 @@ from django.contrib import auth, messages
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 
 def login(request):
+    """ Вход пользователя """
     if request.method == 'POST':  # Если POST-запрос на получение данных с формы
         login_form = UserLoginForm(data=request.POST)
         if login_form.is_valid():
@@ -21,6 +22,7 @@ def login(request):
     return render(request, 'users/login.html', context)
 
 def signup(request):
+    """ Регистрация нового пользователя """
     if request.method == 'POST':  # Если POST-запрос на получение данных с формы
         registration_form = UserRegistrationForm(data=request.POST)
         if registration_form.is_valid():
@@ -36,12 +38,13 @@ def signup(request):
 
 
 def profile(request):
+    """ Профиль пользователя """
     if request.method == 'POST':  # Если POST-запрос на получение данных с формы
         profile_form = UserProfileForm(data=request.POST, files=request.FILES, instance=request.user)
         if profile_form.is_valid():
             profile_form.save()  # Сохраняем форму
             return redirect('profile')  # Переадресация на страницу профиля
-    else:
+    else:  # Если не POST-запрос, то
         profile_form = UserProfileForm(instance=request.user)
     context = {
         'form': profile_form
@@ -50,5 +53,6 @@ def profile(request):
 
 
 def logout(request):
+    """ Выход пользователя """
     auth.logout(request)
     return redirect('core:index')  # перенаправить на Главную

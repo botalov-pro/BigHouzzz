@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Транспорт- подробно{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <h1>Транспорт - подробно</h1>
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Рег. знак:</th>
+      <td>{{ vehicle.Regnum }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Модель:</th>
+      <td>{{ vehicle.Model }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Цвет:</th>
+      <td>{{ vehicle.Color }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

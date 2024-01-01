@@ -26,16 +26,19 @@ urlpatterns = [
     path('auth/', include('users.urls')),
     path('profile/', views.profile, name='profile'),
     path('cars/', include('cars.urls')),
-    path('flats/', include('flats.urls')),
+    path('house/', include('flats.urls')),
     path('', include('core.urls')),
 ]
 
-# Путь для статических файлов
-if settings.DEBUG:
+if settings.DEBUG:  # Если запущен режим отладки, то
+    # Добавить пути для статических файлов STATIC и MEDIA
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+    # Включить инструмент отладки Django Debug Toolbar
+    import debug_toolbar
+    urlpatterns += [path('__debug__/', include(debug_toolbar.urls)),]
 
 handler404 = 'core.views.page_not_found'
 handler500 = 'core.views.server_error'

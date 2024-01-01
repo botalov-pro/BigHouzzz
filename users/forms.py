@@ -43,10 +43,10 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = (
+            'username',
+            'email',
             'first_name',
             'last_name',
-            'email',
-            'username',
             'password1',
             'password2'
         )
@@ -73,11 +73,11 @@ class UserProfileForm(UserChangeForm):
             'last_name',
             'email',
             'username',
-            'image'
+            'avatar'
         )
 
     def __init__(self, *args, **kwargs):
         super(UserProfileForm, self).__init__(*args, **kwargs)
         for field_name, filed in self.fields.items():
             filed.widget.attrs['class'] = 'form-control'
-        self.fields['image'].widget.attrs['class'] = 'custom-file-input'
+        self.fields['avatar'].widget.attrs['class'] = 'custom-file-input'

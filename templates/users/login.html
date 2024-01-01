@@ -5,29 +5,33 @@
     {% csrf_token %}
     <h1 class="h3 mb-3 fw-normal">Вход</h1>
     <div class="form-floating">
-        {{ form.username }}
-        <label for="{{ form.username.id_for_label }}">Пользователь</label>
-    </div>
-    <div class="form-floating">
-        {{ form.password }}
-        <label for="{{ form.password.id_for_label }}">Пароль</label>
-    </div>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Запомнить меня
-        </label>
-    </div>
-    <div class="form-floating">
         {% if messages or form.errors %}
             {% if messages %}
                 {% for message in messages %}
-                    {{ message }}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
                 {% endfor %}
             {% else %}
-                {{ form.non_field_errors }}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
             {% endif %}
         {% endif %}
     </div>
+    <div class="form-floating mb-1">
+        {{ form.username }}
+        <label for="{{ form.username.id_for_label }}">Пользователь</label>
+    </div>
+    <div class="form-floating mb-3">
+        {{ form.password }}
+        <label for="{{ form.password.id_for_label }}">Пароль</label>
+    </div>
+    <!--    <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Запомнить меня
+            </label>
+        </div>-->
     <button class="btn btn-lg btn-primary" type="submit">Войти</button>
 </form>
 {% endblock %}

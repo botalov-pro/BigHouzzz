@@ -1,0 +1,16 @@
+{# Filter #}
+<form method="post">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <select class="form-select" aria-label="Выбор типа ТС"
+                name="category_filter" style="width:40%">
+            <option value="0">Все категории ТС</option>
+            {% for cat in categories %}
+            <option value="{{ cat.id }}" {% if selected_category == cat.id %}
+                    selected {% endif %}>{{ cat.name }}
+            </option>
+            {% endfor %}
+        </select>
+        <input type="submit" class="btn btn-success" value="Применить">
+    </div>
+</form>

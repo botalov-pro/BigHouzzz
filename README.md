@@ -1,20 +1,36 @@
 # BigHouzz
 ### by Konstantin Botalov
 
-🏘️ **BigHouzz** is a web app for managing relationships with neighbors in multi-apartment residential buildings
+🏘️ **BigHouzz** is a full-stack web application for managing relationships with neighbors in multi-apartment residential buildings
 
 The code uses [Django](https://www.djangoproject.com/) as the website engine, and [Bootstrap](https://getbootstrap.com/) for the user interface.
 
 ## System Requirements
 
-  * [Python 3.12](https://www.python.org/downloads/)
-  * Django 4.2.6
-  * django-bootstrap v5
-  * django-environ 0.11.2
+  * [Python 3.10.1](https://www.python.org/downloads/)
+  * Django 4.1.10
+  * django-bootstrap v5 1.0.11
   * pillow 10.1.0
+  * django-environ 0.11.2
+  * django-debug-toolbar 4.2.0
+  * Trusted browser: Google Chrome v. 119.0.6045.160 (64 bit)
 
 ## 🚀 Features
 
+### Frontend pages
+  * Home
+  * About
+  * Contacts
+  * Administration
+  * Register
+  * Login
+  * Vehicle
+
+### Design specification
+  * Use Any Bootstrap icon Logo (frontend)
+  * Mobile Friendly
+
+### Functionality specification
   * User Registration
   * Vehicles Registration
   * About project and Contact pages
@@ -23,6 +39,14 @@ The code uses [Django](https://www.djangoproject.com/) as the website engine, an
 ***TODO and Features will come in the future***
 
 You can see in [TODO](TODO.md).
+
+## Screenshots
+  * Home
+![1_home.png](static/vendor/img/screenshots/1_home.png)
+  * Vehicles Index Page
+![2_vehicles.png](static/vendor/img/screenshots/2_vehicles.png)
+  * Vehicles Detail Page
+![3_vehicles_details.png](static/vendor/img/screenshots/3_vehicles_details.png)
 
 ## ⚡ Main Technologies
 <code>Python</code> <code>Django</code> <code>Django-environ</code> <code>HTML</code> <code>CSS</code> <code>Bootstrap</code> <code>pillow</code> 
@@ -64,6 +88,8 @@ $ python manage.py createsuperuser
 ``` 
   7. Load fixtures with demo data:
 ```bash
+$ python manage.py loaddata users/fixtures/users.json
+$ python manage.py loaddata core/fixtures/core.json
 $ python manage.py loaddata cars/fixtures/cars.json
 ``` 
  8. Start the Django server:
@@ -85,4 +111,4 @@ https://github.com/botalov-pro/BigHouzzz/issues
 
 ## Author
 
-Developed and maintained by [Konstantin Botalov](https://botalov.pro)
+Developed and maintained by [Konstantin Botalov](mailto:konstantin@botalov.pro)

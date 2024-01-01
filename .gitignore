@@ -64,3 +64,9 @@ pip-delete-this-directory.txt
 
 # Backup files
 *.bak
+*.pyc
+
+__pycache__/
+
+# Deploy
+passenger_wsgi.py
