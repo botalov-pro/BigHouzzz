@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Профиль{% endblock %}
+{% block title %}Профиль пользователя{% endblock %}
 {% block content %}
-<h1 class="h3 mb-3 fw-normal">Профиль</h1>
+<h1 class="h3 mb-3 fw-normal">Профиль пользователя <strong>{{ user.username }}</strong></h1>
 <img width="100" height="100" src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" class="img-thumbnail">
 <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -11,19 +11,23 @@
             {{ form.image }}
         </div>
     </div>
-    <div class="form-floating">
-        {{ form.first_name }}
-        <label for="{{ form.first_name.id_for_label }}">Имя</label>
-    </div>
-    <div class="form-floating">
+    <div class="form-floating mb-1">
         {{ form.last_name }}
         <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-1">
+        {{ form.first_name }}
+        <label for="{{ form.first_name.id_for_label }}">Имя</label>
+    </div>
+    <div class="form-floating mb-1">
+        {{ form.patronymic_name }}
+        <label for="{{ form.patronymic_name.id_for_label }}">Отчество</label>
+    </div>
+    <div class="form-floating mb-1">
         {{ form.email }}
         <label for="{{ form.email.id_for_label }}">Адрес эл. почты</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-1">
         {{ form.username }}
         <label for="{{ form.username.id_for_label }}">Имя пользователя (логин)</label>
     </div>

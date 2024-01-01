@@ -21,11 +21,14 @@ class UserLoginForm(AuthenticationForm):
 
 
 class UserRegistrationForm(UserCreationForm):
+    last_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Введите фамилию',
+    }))
     first_name = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Введите имя',
     }))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Введите фамилию',
+    patronymic_name = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Введите отчество',
     }))
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Введите имя пользователя',
@@ -45,8 +48,9 @@ class UserRegistrationForm(UserCreationForm):
         fields = (
             'username',
             'email',
-            'first_name',
             'last_name',
+            'first_name',
+            'patronymic_name',
             'password1',
             'password2'
         )
@@ -69,8 +73,9 @@ class UserProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields = (
-            'first_name',
             'last_name',
+            'first_name',
+            'patronymic_name',
             'email',
             'username',
             'avatar'
