@@ -72,6 +72,7 @@ $ source venv/bin/activate
 ```python
 DEBUG=True
 SECRET_KEY='<YOUR_SECRET_KEY>'
+ALLOWED_HOSTS='127.0.0.1, localhost'
 ```
   4. Install the required python packages:
 ```bash
