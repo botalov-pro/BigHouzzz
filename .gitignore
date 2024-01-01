@@ -65,3 +65,5 @@ pip-delete-this-directory.txt
 # Backup files
 *.bak
 *.pyc
+
+__pycache__/
