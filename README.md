@@ -68,7 +68,7 @@ $ source venv/Scripts/activate
 # Activate the virtual environment in Linux/Mac
 $ source venv/bin/activate
 ```
-  3. Create a .env file in the project root folder with the following contents:
+  3. Create a .env file in the project root folder with the following contents (you can create one by making a copy of the .env_dist):
 ```python
 DEBUG=True
 SECRET_KEY='<YOUR_SECRET_KEY>'
