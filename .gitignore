@@ -67,3 +67,6 @@ pip-delete-this-directory.txt
 *.pyc
 
 __pycache__/
+
+# Deploy
+passenger_wsgi.py
