@@ -35,6 +35,23 @@
                     </tr>
                     </tbody>
                 </table>
+
+                {# Информация о водителе #}
+                <h5>Информация о водителе:</h5>
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th scope="row" class="text-end">Имя:</th>
+                        <td>{{ vehicle.driver.last_name }} {{ vehicle.driver.first_name }} {{ vehicle.driver.patronymic_name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-end">Телефон:</th>
+                        <td>
+                            <a href="tel:{{ vehicle.driver.phone_number }}">{{ vehicle.driver.phone_number|default_if_none:"---" }}</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
