@@ -34,15 +34,17 @@
         <div class="row gy-3 gy-lg-4">
         {% for Review in Reviews %}
           <div class="col-12 col-lg-6">
-            <div class="card">
+            <div class="card h-100">
               <div class="card-body p-4 p-xxl-5">
                 <div class="bsb-ratings text-warning mb-3" data-bsb-star="{{ Review.rating }}" data-bsb-star-off="0"></div>
                 <blockquote class="bsb-blockquote-icon mb-3">{{ Review.text }}</blockquote>
+              </div>
+              <div class="card-footer bg-transparent border-0">
                 <figure class="d-flex align-items-center m-0 p-0">
                   <img width="80" height="80" class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="{% if Review.user.avatar %} {{ Review.user.avatar.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" alt="">
                   <figcaption class="ms-3">
                     <h4 class="mb-1 h5">{{ Review.user.first_name }} {{ Review.user.last_name }}</h4>
-                    <h5 class="fs-6 text-secondary mb-0">{{ Review.created }}</h5>
+                    <small class="text-muted">{{ Review.created|timesince }} назад</small>
                   </figcaption>
                 </figure>
               </div>
