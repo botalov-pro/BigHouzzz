@@ -2,12 +2,15 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from http import HTTPStatus
+from .models import Review
 
 
 def index(request):
+    reviews = Review.objects.filter(is_active=True).order_by('-created')
     context = {
         'Title': 'BigHouzzz',
         'Header1': 'Главная страница!',
+        'Reviews': reviews,
     }
     return render(request, 'core/index.html', context)
 
