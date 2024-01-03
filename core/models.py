@@ -3,6 +3,8 @@ from django.db import models
 
 class Colors(models.Model):
     """ Цвета """
+
+    # DATABASE FIELDS
     name = models.CharField(
         'Цвет',
         max_length=100
@@ -16,6 +18,12 @@ class Colors(models.Model):
         default=True
     )
 
+    # META CLASS
+    class Meta:
+        verbose_name = 'Цвет'
+        verbose_name_plural = 'Цвета'
+
+    # TO STRING METHOD
     def __str__(self):
         return self.name
 
