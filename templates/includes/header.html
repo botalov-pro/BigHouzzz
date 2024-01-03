@@ -38,17 +38,20 @@
                                     {% if request.resolver_match.view_name  == 'core:contacts' %}active{% endif %}"
                                    href="{% url 'core:contacts' %}">Контакты</a>
                             </li>
-                            {% if user.is_authenticated and user.is_superuser %}
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                   href="{% url 'admin:index' %}">Администрирование</a>
-                            </li>
-                            {% endif %}
                         </ul>
                         <div class="text-end">
                             {% if user.is_authenticated %}
-                                <a class="btn btn-outline-light me-md-2" href="{% url 'profile' %}" role="button">Пользователь: {{ user.username }}</a>
-                                <a class="btn btn-danger" href="{% url 'users:logout' %}" role="button">Выйти <i class="bi bi-box-arrow-right"></i></a>
+                                <div class="dropdown">
+                                    <a class="btn btn-outline-light me-md-2 dropdown-toggle" role="button" id="dropdownUserMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Пользователь: {{ user.username }}</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownUserMenuButton">
+                                        <li><a class="dropdown-item" href="{% url 'profile' %}">Профиль</a></li>
+                                        {% if user.is_authenticated and user.is_superuser %}
+                                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">Администрирование</a></li>
+                                        {% endif %}
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item link-danger" href="{% url 'users:logout' %}">Выйти <i class="bi bi-box-arrow-right"></i></a></li>
+                                    </ul>
+                                </div>
                             {% else %}
                                 <a class="btn btn-outline-light me-2" href="{% url 'users:login' %}" role="button">Войти</a>
                                 <a class="btn btn-success" href="{% url 'users:signup' %}" role="button">Зарегистрироваться</a>
