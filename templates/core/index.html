@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{ Title }}{% endblock %}
 {% block content %}
 <h1 class="visually-hidden">{{ Header1 }}</h1>
@@ -20,6 +21,9 @@
     Присоединяйтесь к проекту BigHouzzz и сделайте свой дом еще уютнее и красивее вместе с нами!
 </p>
 <img src="https://gzhi.mosreg.ru/upload/files/o/J/oJfMAwlgpwjl6w8ZZJKEyvfsgSsgKSMVY1mlRzlnm1Y6mdNGDT0rkwD02a6mw2LlIVoscGEw0lYLMh4Lr62SzwO9WGowVLoP.jpg" width="100%">
+
+{% include 'core/reviews.html' %}
+
 {% endblock %}
 
 {# Footer #}

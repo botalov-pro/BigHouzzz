@@ -1,0 +1,36 @@
+{# Отзывы #}
+{% load static %}
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/testimonials/testimonial-4/assets/css/testimonial-4.css">
+<section class="py-3 py-md-5 py-xl-8">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-8">
+        <h3 class="fs-5 mb-2 text-secondary text-uppercase">Отзывы</h3>
+        <h2 class="display-5 mb-4">Отзывы наших уважаемых пользователей говорят о качестве нашей работы.</h2>
+        <a class="btn btn-lg btn-primary mb-3 mb-md-4 mb-xl-5" href="#review-modal-form" role="button">Добавить отзыв</a>
+
+      {# Список отзывов #}
+      <div class="container overflow-hidden">
+        <div class="row gy-3 gy-lg-4">
+        {% for Review in Reviews %}
+          <div class="col-12 col-lg-6">
+            <div class="card">
+              <div class="card-body p-4 p-xxl-5">
+                <div class="bsb-ratings text-warning mb-3" data-bsb-star="{{ Review.rating }}" data-bsb-star-off="0"></div>
+                <blockquote class="bsb-blockquote-icon mb-3">{{ Review.text }}</blockquote>
+                <figure class="d-flex align-items-center m-0 p-0">
+                  <img width="80" height="80" class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="{% if Review.user.avatar %} {{ Review.user.avatar.url }} {% else %} {% static 'vendor/img/users/default_avatar.png' %} {% endif %}" alt="">
+                  <figcaption class="ms-3">
+                    <h4 class="mb-1 h5">{{ Review.user.first_name }} {{ Review.user.last_name }}</h4>
+                    <h5 class="fs-6 text-secondary mb-0">{{ Review.created }}</h5>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
