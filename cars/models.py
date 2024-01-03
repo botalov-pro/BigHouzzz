@@ -37,7 +37,7 @@ class VehicleBrand(models.Model):
 
 
 class VehicleModel(models.Model):
-    """ Транспортное средство """
+    """ Модель транспортного средства """
     vehicle_model = models.CharField(max_length=255, verbose_name='Модель ТС')
 
     def __str__(self):
