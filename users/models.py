@@ -19,6 +19,10 @@ class User(AbstractUser):
         max_length=12,
         blank=True
     )
+    phone_number_confirmed = models.BooleanField(
+        verbose_name='Подтвержден?',
+        default=False
+    )
     avatar = models.ImageField(
         'Аватар',
         upload_to='users_images',
