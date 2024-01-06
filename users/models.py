@@ -9,6 +9,11 @@ class User(AbstractUser):
         max_length=50,
         blank=True
     )
+    bio = models.TextField(
+        verbose_name='О себе',
+        max_length=254,
+        blank=True
+    )
     birth_date = models.DateField(
         'Дата рождения',
         blank=True,
