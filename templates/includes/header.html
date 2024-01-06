@@ -44,12 +44,12 @@
                                 <div class="dropdown">
                                     <a class="btn btn-outline-light me-md-2 dropdown-toggle" role="button" id="dropdownUserMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Пользователь: {{ user.username }}</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownUserMenuButton">
-                                        <li><a class="dropdown-item" href="{% url 'profile' %}">Профиль</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="bi bi-person-gear"></i> Профиль</a></li>
                                         {% if user.is_authenticated and user.is_superuser %}
-                                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">Администрирование</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="bi bi-sliders"></i> Администрирование</a></li>
                                         {% endif %}
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item link-danger" href="{% url 'users:logout' %}">Выйти <i class="bi bi-box-arrow-right"></i></a></li>
+                                        <li><a class="dropdown-item link-danger" href="{% url 'users:logout' %}"><i class="bi bi-box-arrow-right"></i> Выйти</a></li>
                                     </ul>
                                 </div>
                             {% else %}
